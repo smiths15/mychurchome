@@ -1,1 +1,8 @@
-<h1>Hello</h1>
+<% @churches.each do |church| %>
+  <div>
+    <h1><%= church.name %></h1>
+    <i><%= church.address %></i>
+    <p><%= church.description %></p>
+  </div>
+
+<% end %>
