@@ -1,8 +1,8 @@
 <% @churches.each do |church| %>
-  <div>
+  <div class="booyah-box col-xs-10 col-xs-offset-1">
     <h1><%= church.name %></h1>
-    <i><%= church.address %></i>
-    <p><%= church.description %></p>
+    <i><%= church.address %></i><br /><br />
+    <p><%= church.description %></p><br />
   </div>
 
 <% end %>
