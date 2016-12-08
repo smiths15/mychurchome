@@ -1,4 +1,9 @@
 source 'https://rubygems.org'
+#gem for simple_form
+gem 'simple_form'
+
+#pagination kaminari 
+gem 'kaminari'
 
 #twitter boostrap
 gem 'bootstrap-sass', '~> 3.3.5.1'
