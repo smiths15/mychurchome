@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+#geocoder gemfile
+gem 'geocoder', '1.3.4'
 #hyperlink for text
 gem 'rails_autolink'
 #gem for simple_form

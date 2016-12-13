@@ -9,8 +9,12 @@ def new
 end
 
 def create
-Church.create(church_params)
-redirect_to root_path
+@church = Church.create(church_params)
+  if @church.valid?
+    redirect_to root_path
+  else
+    render :new, status: :unprocessable_entity
+  end
 end
 
 def show
@@ -24,7 +28,13 @@ end
 def update
   @church = Church.find(params[:id])
   @church = update_attributes(church_params)
-  redirect_to root_path
+
+  if @church.valid?
+    redirect_to root_path
+  else
+    render :edit, status: :unprocessable_entity
+  end
+
 end
 
 private
