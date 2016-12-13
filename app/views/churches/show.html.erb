@@ -1,0 +1,20 @@
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+  <h1><%= @church.name %></h1> 
+  
+  <%if @church.weblink.present?%>
+    <% def strip_url(url) %>
+      <% url.sub!("https://", "") %>
+      <% url.sub!("http://", "") %>
+      <% url.sub!("www.", "") %>
+    <% end %>
+    
+    <% strip_url (@church.weblink) %> 
+    <i><%= auto_link("www.#{@church.weblink}") %></i>
+  
+  <% end %>
+
+  <br/>
+  <i><%= @church.address %></i>
+  <br/><br/>
+  </p><%= @church.description %></p>
+  </div>

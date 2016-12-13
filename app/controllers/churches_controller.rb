@@ -8,10 +8,18 @@ def new
 @church = Church.new
 end
 
+def create
+Church.create(church_params)
+redirect_to root_path
+end
+
+def show
+  @church = Church.find(params[:id])
+end
 
 private
 
-  def place_params
+  def church_params
     params.require(:church).permit(:name, :address, :description, :weblink)
   end
 

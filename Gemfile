@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+#hyperlink for text
+gem 'rails_autolink'
 #gem for simple_form
 gem 'simple_form'
 
