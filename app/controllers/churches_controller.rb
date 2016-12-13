@@ -17,6 +17,16 @@ def show
   @church = Church.find(params[:id])
 end
 
+def edit
+  @church = Church.find(params[:id])
+end
+
+def update
+  @church = Church.find(params[:id])
+  @church = update_attributes(church_params)
+  redirect_to root_path
+end
+
 private
 
   def church_params
