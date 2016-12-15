@@ -57,3 +57,31 @@ blockquote:before {
 blockquote p {
   display: inline;
 }
+
+.aboutchurchome {
+  color: #f0c078;
+  font-family: 'Wendy One', sans-serif;
+  font-size: 46px;
+}
+
+.description {
+  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  color: #ffffff;
+}
+
+.authlogo a {
+color: #f0c078;  
+}
+
+.searchbox {
+  border: 1px solid;
+  border-color: #cccccc;
+  border-radius: 4px; 
+  height: 34px;
+  margin-top: 10px;
+  color: #000000;
+}
+
+.submitbox {
+  margin-top: 10px;
+}

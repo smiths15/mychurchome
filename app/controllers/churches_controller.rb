@@ -42,6 +42,20 @@ def update
     redirect_to root_path
   end
 
+  def about
+  end
+
+  def search
+    @churches = Church.search(params[:search]).page(params[:page]).per(5) if params[:search]
+    if @places.blank?
+      flash.now[:notice] = "Please make a valid entry."
+    else
+      render :index
+    end
+  end
+
+
+
 end
 
 private
