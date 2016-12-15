@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
 root 'churches#index'
 
-resources :churches 
+resources :churches do  
+  resources :comments, only: :create
+end
 
 get 'about', to: 'churches#about'
 

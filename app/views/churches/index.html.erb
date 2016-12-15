@@ -3,9 +3,21 @@
     <h1><%= link_to church.name, church_path(church) %></h1>
     <i><%= church.address %></i><br /><br />
     <p><%= church.description %></p><br />
-  </div>
 
+    <% if church.comments.present? %>
+      <div class="col-xs-12">
+          <blockquote>
+            <% if church.comments.last.humanized_rating.present? %>
+              <b><%= church.comments.last.humanized_rating %></b> -
+            <% end %>
+              <%= church.comments.last.message %>
+          </blockquote>  
+      </div>
+    <% end%> 
+  </div>
 <% end %>
+
+
 
 <div class="col-xs-10 col-xs-offset-1" style="text-align: center;">
     <%= paginate @churches %>
