@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+
+#gem figaro to store pswds in gitignore
+gem 'figaro', '>=1.0.0'
 #geocoder gemfile
 gem 'geocoder', '1.3.4'
 #hyperlink for text

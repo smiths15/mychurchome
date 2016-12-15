@@ -27,7 +27,7 @@ end
 
 def update
   @church = Church.find(params[:id])
-  @church = update_attributes(church_params)
+  @church.update_attributes(church_params)
 
   if @church.valid?
     redirect_to root_path

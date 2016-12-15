@@ -1,4 +1,5 @@
 class Church < ActiveRecord::Base
 geocoded_by :address
-validates :name, :address, :description, :weblink, presence: true, length: {minimum: 3} 
+after_validation :geocode 
+validates :name, :address, :description, presence: true, length: {minimum: 3} 
 end
