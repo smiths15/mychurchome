@@ -18,6 +18,34 @@
   <br/><br/>
   </p><%= @church.description %></p>
 
+  <% if @church.latitude.present? && @church.longitude.present? %>
+
+    <script>
+        function initMap() {
+          var myLatLng = {lat: <%= @church.latitude %>, lng: <%= @church.longitude %> } ;
+
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: myLatLng
+          });
+
+          var marker = new google.maps.Marker ({
+            position: myLatLng,
+            map: map,
+            title: 'Hello World'
+          });
+        }
+      </script>
+
+      <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYYG70AZ-s7Sopk60q-J5zpt3L9-u9NbU&callback=initMap">
+      </script>
+
+      <div id="map"></div>
+
+    <% end %>
+
+<br />
 
  <div class="pull-left">
       <%= link_to 'Edit', edit_church_path(@church), class: 'btn btn-primary' %>
