@@ -35,6 +35,12 @@ def update
     render :edit, status: :unprocessable_entity
   end
 
+  def destroy
+    @church = Church.find(params[:id])
+    @church.destroy
+    redirect_to root_path
+  end
+
 end
 
 private
