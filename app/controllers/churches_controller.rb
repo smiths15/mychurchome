@@ -46,14 +46,14 @@ def update
   end
 
   def search
-    @churches = Church.search(params[:search]).page(params[:page]).per(5) if params[:search]
-    if @places.blank?
+    @church = Church.search(params[:search]).page(params[:page]).per(5) if params[:search]
+    
+    if @churches.blank?
       flash.now[:notice] = "Please make a valid entry."
     else
-      render :index
+      render :show
     end
   end
-
 
 
 end
