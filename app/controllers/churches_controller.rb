@@ -1,62 +1,64 @@
+require 'pry'
 class ChurchesController < ApplicationController
 
-def index
-@churches = Church.all.page(params[:page]).per(5)
-end
-
-def new
-@church = Church.new
-end
-
-def create
-@church = Church.create(church_params)
-  if @church.valid?
-    redirect_to root_path
-  else
-    render :new, status: :unprocessable_entity
+  def index
+  @churches = Church.all.page(params[:page]).per(5)
   end
-end
 
-def show
-  @church = Church.find(params[:id])
-  @comment = Comment.new
-end
+  def new
+  @church = Church.new
+  end
 
-def edit
-  @church = Church.find(params[:id])
-end
+  def create
+  @church = Church.create(church_params)
+    if @church.valid?
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
-def update
-  @church = Church.find(params[:id])
-  @church.update_attributes(church_params)
+  def show
+    @church = Church.find(params[:id])
+    @comment = Comment.new
+  end
 
-  if @church.valid?
-    redirect_to root_path
-  else
-    render :edit, status: :unprocessable_entity
+  def edit
+    @church = Church.find(params[:id])
+  end
+
+  def update
+    @church = Church.find(params[:id])
+    @church.update_attributes(church_params)
+
+    if @church.valid?
+      redirect_to root_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
-    @church = Church.find(params[:id])
-    @church.destroy
-    redirect_to root_path
+      @church = Church.find(params[:id])
+      @church.destroy
+      redirect_to root_path
   end
 
   def about
   end
 
   def search
-    @church = Church.search(params[:search]).page(params[:page]).per(5) if params[:search]
-    
+    @churches = Church.search(params[:search]).page(params[:page]).per(5) if params[:search]
+    binding.pry
     if @churches.blank?
       flash.now[:notice] = "Please make a valid entry."
     else
-      render :show
+      render :index
     end
   end
 
 
-end
+
 
 private
 

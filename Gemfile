@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+#gem pry for debugging command line style
+gem 'pry'
 #gem figaro to store pswds in gitignore
 gem 'figaro', '>=1.0.0'
 #geocoder gemfile
