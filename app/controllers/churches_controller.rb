@@ -49,7 +49,6 @@ class ChurchesController < ApplicationController
 
   def search
     @churches = Church.search(params[:search]).page(params[:page]).per(5) if params[:search]
-    binding.pry
     if @churches.blank?
       flash.now[:notice] = "Please make a valid entry."
     else
