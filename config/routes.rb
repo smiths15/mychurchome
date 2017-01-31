@@ -10,6 +10,9 @@ get 'about', to: 'churches#about'
 
 get 'search', to: 'churches#search'
 
+get 'privacy', to: 'churches#privacy'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -56,6 +56,9 @@ class ChurchesController < ApplicationController
     end
   end
 
+  def privacy
+  
+  end
 
 
 
